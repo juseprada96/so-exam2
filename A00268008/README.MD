@@ -107,6 +107,7 @@ cat /proc/cpuinfo
 ![][8]
 
 Para observar ambos procesos podemos usar el comando top.
+
 ``
 
 top
