@@ -30,18 +30,23 @@ El segundo parcial del curso sistemas operativos trata sobre el manejo de namesp
  
  **Creación de los dos scripts:**
  
-![][1]:
+![][1]
 
 **Creación de los demons:**
 
+
 Para crear los demons nos dirigimos a la siguiente carpeta
+
 
 ``
 cd /etc/systemd/system/
 ``
+
 y creamos los demons con los nombres
 
+
 *nombreservicio*.service
+
 
 y con el siguiente codigo:
 
@@ -54,10 +59,11 @@ ExecStart= ubicación del script
 Restart= tipo de restart
 [Install]
 WantedBy= Usuarios interesados
+
 ``
 
-![][2]:
-![][3]:
+![][2]
+![][3]
 
 **Una vez creados los demons utilizamos systemctl para iniciar los serivicios.**
 
