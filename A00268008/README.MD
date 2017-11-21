@@ -47,21 +47,15 @@ y con el siguiente codigo:
 
 ``
 [Unit]
-
 Description= Descripción del servicio
-
 [Service]
-
 User= usuario sobre el cual se ejecuta el proceso
-
 ExecStart= ubicación del script
-
 Restart= tipo de restart
-
 [Install]
-
 WantedBy= Usuarios interesados
 ``
+
 ![][2]:
 ![][3]:
 
@@ -72,6 +66,7 @@ systemctl enable *nombreservicio*
 ``
 ![][4]
 
+
 Configuramos la CPUQuota
 
 ``
@@ -79,6 +74,7 @@ systemctl set-property *nombreservicio* CPUQuota=50%
 ``
 
 ![][5]
+
 
 Iniciamos el servicio
 
@@ -103,14 +99,17 @@ cat /proc/cpuinfo
 ``
 ![][8]
 
+
 Para observar ambos procesos podemos usar el comando top.
 
 ``
 top
 ``
+
 Para salir presionamos q.
 
 ![][9]
+
 
 Como podemos ver ningun proceso supera el CPUQuota.
 
