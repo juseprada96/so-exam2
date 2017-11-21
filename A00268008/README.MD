@@ -24,15 +24,15 @@ El segundo parcial del curso sistemas operativos trata sobre el manejo de namesp
  * Cada proceso debe poder acceder solo al 50% de la CPU
  * Cuando uno de los procesos se cancela, el que continua ejecutándose no debe acceder a mas del 50% de la CPU
  
-*Para realizar la pruena de concepto se crearan dos scripts a los cuales se les asignara posteriormente un demonio y un mecanismo de control de CPUQuota.
+* Para realizar la pruena de concepto se crearan dos scripts a los cuales se les asignara posteriormente un demonio y un mecanismo de control de CPUQuota.
  
  Ambos scripts se crearon en el directorio: /home/parcial-2/scripts/
  
- **Creación de los dos scripts:
+ **Creación de los dos scripts:**
  
 ![][1]:
 
-**Creación de los demons:
+**Creación de los demons:**
 
 Para crear los demons nos dirigimos a la siguiente carpeta
 
@@ -58,17 +58,21 @@ WantedBy= Usuarios interesados
 ![][2]:
 ![][3]:
 
-**Una vez creados los demons utilizamos systemctl para iniciar los serivicios.
+**Una vez creados los demons utilizamos systemctl para iniciar los serivicios.**
 
 ``
+
 systemctl enable *nombreservicio*
+
 ``
 ![][4]
 
 Configuramos la CPUQuota
 
 ``
+
 systemctl set-property *nombreservicio* CPUQuota=50%
+
 ``
 
 ![][5]
@@ -76,14 +80,18 @@ systemctl set-property *nombreservicio* CPUQuota=50%
 Iniciamos el servicio
 
 ``
+
 systemctl start *nombreservicio*
+
 ``
 ![][6]
 
 Y verificamos el estado de los servicios
 
 ``
+
 systemctl status *nombreservicio*
+
 ``
 
 ![][7]
@@ -92,13 +100,17 @@ Para verificar que estamos usando un unico procesador y observar sus caracterist
 usamos el siguiente comando:
 
 ``
+
 cat /proc/cpuinfo
+
 ``
 ![][8]
 
 Para observar ambos procesos podemos usar el comando top.
 ``
+
 top
+
 ``
 Para salir presionamos q.
 
@@ -110,7 +122,9 @@ Como podemos ver ningun proceso supera el CPUQuota.
 Ahora paramos alguno de los dos procesos:
 
 ``
+
 systemctl stop *nombreservicio*
+
 ``
 ![][10]
 
