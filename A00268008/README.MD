@@ -51,7 +51,7 @@ y creamos los demons con los nombres
 y con el siguiente codigo:
 
 ``
-[Unit]
+[Unit]</br>
 Description= Descripción del servicio
 [Service]
 User= usuario sobre el cual se ejecuta el proceso
@@ -59,7 +59,6 @@ ExecStart= ubicación del script
 Restart= tipo de restart
 [Install]
 WantedBy= Usuarios interesados
-
 ``
 
 ![][2]
