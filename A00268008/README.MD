@@ -47,12 +47,19 @@ y con el siguiente codigo:
 
 ``
 [Unit]
+
 Description= Descripción del servicio
+
 [Service]
+
 User= usuario sobre el cual se ejecuta el proceso
+
 ExecStart= ubicación del script
+
 Restart= tipo de restart
+
 [Install]
+
 WantedBy= Usuarios interesados
 ``
 ![][2]:
@@ -61,18 +68,14 @@ WantedBy= Usuarios interesados
 **Una vez creados los demons utilizamos systemctl para iniciar los serivicios.**
 
 ``
-
 systemctl enable *nombreservicio*
-
 ``
 ![][4]
 
 Configuramos la CPUQuota
 
 ``
-
 systemctl set-property *nombreservicio* CPUQuota=50%
-
 ``
 
 ![][5]
@@ -80,18 +83,14 @@ systemctl set-property *nombreservicio* CPUQuota=50%
 Iniciamos el servicio
 
 ``
-
 systemctl start *nombreservicio*
-
 ``
 ![][6]
 
 Y verificamos el estado de los servicios
 
 ``
-
 systemctl status *nombreservicio*
-
 ``
 
 ![][7]
@@ -100,18 +99,14 @@ Para verificar que estamos usando un unico procesador y observar sus caracterist
 usamos el siguiente comando:
 
 ``
-
 cat /proc/cpuinfo
-
 ``
 ![][8]
 
 Para observar ambos procesos podemos usar el comando top.
 
 ``
-
 top
-
 ``
 Para salir presionamos q.
 
@@ -123,9 +118,7 @@ Como podemos ver ningun proceso supera el CPUQuota.
 Ahora paramos alguno de los dos procesos:
 
 ``
-
 systemctl stop *nombreservicio*
-
 ``
 ![][10]
 
