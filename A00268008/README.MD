@@ -135,7 +135,18 @@ Como podemos ver el proceso restante no supera el CPUQuota.
  * Se deben ejecutar dos procesos
  * Uno de los procesos tendrá el 25% de la CPU mientras que el otro tendrá el 75% de la CPU
  * Cuando uno de los procesos se cancela, el que continua ejecutándose debe poder llegar al 100% de la CPU
+ 
+ Continuando con las pruenas para asignar el CPUShare se usa el comando
+ ``
+ systemctl set-property *nombreservicio* CPUShares=N
+ ``
+ EL CPUShare basico de todos los servicios es de 1024, si asignamos un mayor valor tendrá más prioridad y si asignamos un menor valor
+ tendrá menos prioridad.
+ 
+ 
+ 
 3. Por medio de las evidencias obtenidas en los puntos anteriores y de fuentes de consulta en Internet, elabore las definiciones para los grupos de control CPUQuota y CPUShares, además concluya acerca de cuando es preferible usar un recurso de control sobre otro (20%)
+
 
 
 
