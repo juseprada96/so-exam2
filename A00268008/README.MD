@@ -140,9 +140,28 @@ Como podemos ver el proceso restante no supera el CPUQuota.
  ``
  systemctl set-property *nombreservicio* CPUShares=N
  ``
+ 
  EL CPUShare basico de todos los servicios es de 1024, si asignamos un mayor valor tendrá más prioridad y si asignamos un menor valor
  tendrá menos prioridad.
+ Para nuestro caso como 1024 es igual al 10%, serán configurados los servicios con 7560 y 2560.
+ A diferencia del CPUQuota el CPUShares puede utilizar más el procesador si no hay otros procesos corriendo.
  
+ En las pruenbas podemos observar como ninguno de los dos procesos supera su CPUShare, pero no utilizan todo el procesador al estar corriendo el procesos systemd-journal.
+ 
+ ![][12]
+ 
+ Adicionalmente para verificar la configuración de los servicios en la carpeta /etc/systemd/system/*nombreservicio*.service.d/
+ 
+ 
+ ![][13]
+ 
+ 
+ ![][14]
+ 
+ 
+ Al parar un proceso podemos observar como sigue sin superar los shares, pero al estar el proceso systemd-journal corriendo no es posible observar como es capaz de tomar el 100%
+ 
+ ![][15]
  
  
 3. Por medio de las evidencias obtenidas en los puntos anteriores y de fuentes de consulta en Internet, elabore las definiciones para los grupos de control CPUQuota y CPUShares, además concluya acerca de cuando es preferible usar un recurso de control sobre otro (20%)
@@ -164,3 +183,7 @@ https://github.com/ICESI/so-containers
 [9]:Imagenes/Screenshot_9.png
 [10]:Imagenes/Screenshot_10.png
 [11]:Imagenes/Screenshot_11.png
+[12]:Imagenes/Screenshot_12.png
+[13]:Imagenes/Screenshot_13.png
+[14]:Imagenes/Screenshot_14.png
+[15]:Imagenes/Screenshot_15.png
