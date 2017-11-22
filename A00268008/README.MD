@@ -166,7 +166,11 @@ Como podemos ver el proceso restante no supera el CPUQuota.
  
 3. Por medio de las evidencias obtenidas en los puntos anteriores y de fuentes de consulta en Internet, elabore las definiciones para los grupos de control CPUQuota y CPUShares, además concluya acerca de cuando es preferible usar un recurso de control sobre otro (20%)
 
+CPUQuota como vimos en las pruebas limita el uso de cpu de un servicio, es muy util cuando queremos asignar limites de uso de un proceso del cpu, aunque no permite ser flexible en caso de que la cpu este libre.
+CPUShares a diferencía del quota ademas de limitar el uso de un servicio también brinda flexibilidad al permitir que un proceso use toda la cpu en caso de que no este siendo utlizada, aunque es un poco más dificil de configurar debido a que es necesario tener en cuenta todos los procesos que vamos a manejar y en que procentaje.
 
+CPUQuota es muy bueno si vamos a tener diferentes procesos y comocemos sus promedios de consumo. Así solo tendriamos que poner un tope maximo a cada uno y evitar que consuma todo el recurso.
+CPUShares es muy bueno si conocemos cuantos procesos se van a tener en total y así configurarlos todos con un nivel respectivo de prioridad, para que cuando alguno este durmiendo los otros puedan usar la cpu normalmente.
 
 
 ### Referencias
