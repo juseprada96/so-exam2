@@ -66,6 +66,7 @@ WantedBy= Usuarios interesados
 
 **Una vez creados los demons utilizamos systemctl para iniciar los serivicios.**
 
+con enable permitimos que el servicio arranque con el inicio del SO
 ``
 systemctl enable *nombreservicio*
 ``
